@@ -48,7 +48,7 @@
           ! create file and pass in the MPI hint
           time_start = MPI_Wtime()
 
-          cmode = NF_CLOBBER + NF_64BIT_DATA
+          cmode = NF_CLOBBER !+ NF_64BIT_DATA
           err = nfmpi_create(gcomm, trim(filename), cmode, file_info, ncid)
           if (err .ne. NF_NOERR) call handle_err('nfmpi_create', err)
 
